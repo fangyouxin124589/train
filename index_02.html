@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PPT02-综合实例</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .header {
+        height: 15%;
+        background: #212169;
+        text-align: center;
+      }
+      .header p {
+        margin: 0;
+        padding: 0;
+        display: inline-block;
+        vertical-align: middle;
+        text-align: left;
+        color: white;
+        font-weight: bold;
+        font-size: 22px;
+      }
+      #header_span {
+        display: inline-block;
+        height: 100%;
+        vertical-align: middle;
+      }
+      #header_p_span {
+        display: block;
+      }
+      .middle {
+        height: 80%;
+      }
+      .middle_left {
+        float: left;
+        width: 25%;
+        /* border: 1px solid red; */
+        height: 100%;
+      }
+      .middle_right {
+        float: left;
+        width: 75%;
+        height: 100%;
+        /* border: 1px solid blue; */
+      }
+      .footer {
+        height: 5%;
+        background: #212169;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div style="height: 100vh;">
+      <div class="header">
+        <p>
+          <span id="header_p_span">来杯咖啡吧?</span>
+        </p>
+        <span id="header_span"></span>
+      </div>
+      <div class="middle">
+        <div class="middle_left">
+          <ul style="padding-left: 20%; padding-top: 30%;">
+            <li><a href="">拿铁</a></li>
+            <li><a href="">卡布奇诺</a></li>
+            <li><a href="">黑铁咖啡</a></li>
+            <li><a href="">美式咖啡</a></li>
+            <li><a href="">焦糖玛奇朵</a></li>
+          </ul>
+        </div>
+        <div class="middle_right">
+          <div style="height: 50%; text-align: center;">
+            <img src="./coffee.jpg" style="height: 100%;" />
+          </div>
+          <div style="height: 50%;">
+            <br />
+            <h2>拿铁</h2>
+            <br />
+            <span>
+              拿铁咖啡是意大利浓缩咖啡(Espresso)与牛奶的经典混合，意大利人也很喜欢把拿铁作为早餐的饮料。意大利人早晨的厨房里，照得到阳光的炉子上通常会同时煮着咖啡和牛奶。喝拿铁的意大利人，与其说他们喜欢意大利浓缩咖啡，不如说他们喜欢牛奶，也只有Espresso才能给普普通通的牛奶带来让人难以忘怀的味道。
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class="footer">
+          <span style="color: white;">版权所有@方友鑫</span>
+      </div>
+    </div>
+  </body>
+</html>
