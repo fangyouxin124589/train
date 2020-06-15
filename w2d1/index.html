@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>弹幕墙</title>
+  <style>
+    #canva {
+      position: absolute;
+      z-index: 1;
+      margin: 0 auto;
+    }
+
+    #barrageplayer {
+      position: relative;
+      display: block;
+      width: 1000px;
+      height: 500px;
+      margin: 0 auto;
+      border: 1px solid skyblue;
+    }
+
+    #barrageinput {
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="barrageplayer">
+    <canvas id="canva" width="1000px" height="450px"></canvas>
+  </div>
+  <div id="barrageinput">
+    <div>
+      <input type="text" id="sendtext" placeholder="请输入弹幕内容" />
+      <button id="send">发送</button>
+    </div>
+  </div>
+
+  <script>
+    var canva = document.getElementById("canva"); //获取画布id
+    var sendtext = document.getElementById("sendtext"); //获取输入框内容
+    // var speed = 2.5; //弹幕速度
+    var type = "default";
+    var msgs = [];
+    //获取画布大小
+    var c_height = canva.height;
+    var c_width = canva.width;
+    //获取画布
+    ctx = canva.getContext("2d");
+    //处理发送弹幕
+    document.getElementById("send").onclick = function () {
+      var text = sendtext.value;
+      var color = getRandomColor();
+      var speed = getRandomSpeed();
+      var font = getRandomFont();
+      var tempBarrage = new Barrage(text, color, type, speed, font);
+      msgs.push(tempBarrage);
+    }
+    //弹幕对象
+    function Barrage(content, color, type, speed, font) {
+      this.content = content;
+      this.color = color;
+      this.type = type;
+      this.speed = 3;
+      this.font = font;
+      this.height = parseInt(Math.random() * (c_height - 20)) + 20;
+      if (typeof this.move != "function") {
+        Barrage.prototype.move = function () {
+          this.left = this.left - this.speed;
+        }
+      }
+    }
+    //循环擦写画布实现动画效果
+    setInterval(function () {
+      ctx.clearRect(0, 0, c_width, c_height);
+      ctx.save();
+      for (var i = 0; i < msgs.length; i++) {
+        if (msgs[i] != null) {
+          handleDefault(msgs[i]);
+        }
+      }
+    }, 20)
+    //处理弹幕样式
+    function handleDefault(barrage) {
+      if (barrage.left == undefined || barrage.left == null) {
+        barrage.left = canva.width;
+      } else {
+        if (barrage.left < -200) {
+          barrage = null;
+        } else {
+          barrage.move()
+          ctx.fillStyle = barrage.color;
+          ctx.fillText(barrage.content, barrage.left, barrage.height);
+          ctx.font = barrage.font;
+          ctx.restore();
+        }
+      }
+    }
+    //随机弹幕大小
+    function getRandomFont(){
+      let font = Math.random() * 50 +"px" + " " + "DengXing";
+      return font;
+    }
+    //随机弹幕颜色
+    function getRandomColor() {
+      let r = Math.random() * 256;
+      let g = Math.random() * 256;
+      let b = Math.random() * 256;
+      let color = `rgb(${r},${g},${b})`;
+      return color;
+    }
+    //随机弹幕速度
+    function getRandomSpeed(){
+      let speed = Math.random() * 10;
+      return speed;
+    }
+  </script>
+</body>
+
+</html>
