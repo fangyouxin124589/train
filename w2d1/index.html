@@ -53,7 +53,7 @@
     document.getElementById("send").onclick = function () {
       var text = sendtext.value;
       var color = getRandomColor();
-      var speed = getRandomSpeed();
+      var speed = 2;
       var font = getRandomFont();
       var tempBarrage = new Barrage(text, color, type, speed, font);
       msgs.push(tempBarrage);
@@ -92,8 +92,8 @@
         } else {
           barrage.move()
           ctx.fillStyle = barrage.color;
-          ctx.fillText(barrage.content, barrage.left, barrage.height);
           ctx.font = barrage.font;
+          ctx.fillText(barrage.content, barrage.left, barrage.height);
           ctx.restore();
         }
       }
