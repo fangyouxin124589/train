@@ -43,7 +43,7 @@
     </style>
     <script
       type="text/javascript"
-      src="http://api.map.baidu.com/api?key=&v=1.1&services=true"
+      src="https://api.map.baidu.com/api?key=&v=2.0&ak=WobYUfu6x6wMzThBGEpl7uFghDuGaOT2&s=1"
     ></script>
   </head>
   <body>
@@ -179,7 +179,7 @@
     //创建一个Icon
     function createIcon(json) {
       var icon = new BMap.Icon(
-        "http://map.baidu.com/image/us_mk_icon.png",
+        "https://map.baidu.com/image/us_mk_icon.png",
         new BMap.Size(json.w, json.h),
         {
           imageOffset: new BMap.Size(-json.l, -json.t),
