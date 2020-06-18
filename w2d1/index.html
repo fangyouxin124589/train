@@ -53,7 +53,7 @@
     document.getElementById("send").onclick = function () {
       var text = sendtext.value;
       var color = getRandomColor();
-      var speed = 2;
+      var speed = getRandomSpeed();
       var font = getRandomFont();
       var tempBarrage = new Barrage(text, color, type, speed, font);
       msgs.push(tempBarrage);
