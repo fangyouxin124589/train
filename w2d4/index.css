@@ -90,6 +90,15 @@
     line-height: 30px;
 }
 
+.footer {
+    margin-top: 10px;
+}
+
+.footer_p {
+    text-align: center;
+    border-top: 1px solid gray;
+}
+
 @media screen and (max-width: 1200px) {
     .header {
         width: 100%;

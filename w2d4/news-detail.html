@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      href="./images/faviconWeb.ico"
+      type="image/x-icon"
+    />
+    <title>女朋友专卖店_新闻详情</title>
+    <link rel="stylesheet" href="./news-detail.css" />
+    <script src="../vue.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/axios/0.19.2/axios.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <div class="header">
+        <div class="header_left">
+          <span>女朋友专卖店</span>
+        </div>
+        <div class="header_right">
+          <a href="./index.html">首页</a>
+          <a href="./news.html">新闻列表</a>
+          <a href="./about.html">关于我们</a>
+        </div>
+      </div>
+      <div class="main">
+        <h3 style="text-align: center; margin-bottom: 20px;border-bottom: 1px solid gray;">
+          {{article.title}}
+        </h3>
+        <div v-html="article.body" class="article_content"></div>
+      </div>
+      <div class="footer">
+        <p class="footer_p">版权所属 @ 方友鑫</p>
+      </div>
+    </div>
+
+    <script>
+      new Vue({
+        el: "#app",
+        data() {
+          return {
+            article: "",
+          };
+        },
+        created() {
+          this.getArticle();
+        },
+        methods: {
+          async getArticle() {
+            const id = this.getID();
+            // console.log(id);
+            const res = await axios.get(
+              `https://blogxin.top/web/api/article?id=${id}`
+            );
+            console.log(res.data);
+            this.article = res.data;
+          },
+          getID() {
+            var query = window.location.search.substring(1).split("&");
+            var id = query[0].split("=")[1];
+            // console.log(id)
+            return id;
+          },
+        },
+      });
+    </script>
+  </body>
+</html>
