@@ -39,45 +39,49 @@
 .main {
     width: 1200px;
     margin: 0 auto;
+    height: auto;
+}
+
+.member_team {
+    width: 1200px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
 }
 
 .member {
     margin-top: 10px;
-    width: 100%;
-    height: 300px;
+    width: 350px;
+    height: auto;
 }
 
 .member_img_1 {
-    height: 100%;
-    width: 40%;
-    float: left;
+    height: 200px;
     background-image: url(./images/海泽王1.jpg);
     background-repeat: no-repeat;
     background-size: 100% 100%;
+    flex: 1;
 }
 
 .member_img_2 {
-    height: 100%;
-    width: 40%;
-    float: left;
+    height: 200px;
     background-image: url(./images/璀璨星空2.jpg);
     background-repeat: no-repeat;
     background-size: 100% 100%;
+    flex: 1;
 }
 
 .member_img_3 {
-    height: 100%;
-    width: 40%;
-    float: left;
+    height: 200px;
     background-image: url(./images/初音未来7.jpg);
     background-repeat: no-repeat;
     background-size: 100% 100%;
+    flex: 1;
 }
 
 .member_text {
-    height: 100%;
-    width: 60%;
-    float: left;
+    height: auto;
+    flex: 1;
 }
 
 .member_text > p {
@@ -97,11 +101,8 @@
     .main {
         width: 100%;
     }
-}
-
-@media screen and (max-width: 900px) {
-    .member {
-       height: 250px; 
+    .member_team {
+        width: 100%;
     }
 }
 
@@ -109,33 +110,5 @@
     .swiper-container {
         width: 100%;
         height: 300px;
-    }
-    .member {
-        height: 220px;
-    }
-}
-
-@media screen and (max-width: 510px) {
-    .member_img_1 {
-        float: none;
-        width: 100%;
-        height: 160px;
-    }
-    .member_img_2 {
-        float: none;
-        width: 100%;
-        height: 160px;
-    }
-    .member_img_3 {
-        float: none;
-        width: 100%;
-        height: 160px;
-    }
-    .member_text {
-        float: none;
-        width: 100%;
-    }
-    .member {
-        height: auto;
     }
 }
