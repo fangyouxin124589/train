@@ -1,0 +1,141 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    width: 1200px;
+    height: 50px;
+    margin: 0 auto;
+    /* background-color: #ff4c4f; */
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.header_left {
+    flex: 1;
+    /* margin-left: 100px; */
+    align-self: center;
+}
+
+.header_right {
+    flex: 1;
+    align-self: center;
+    text-align: right;
+}
+
+.header_right a {
+    color: black;
+    padding-left: 5px;
+    text-decoration: none;
+}
+
+.swiper-container {
+    width: 1200px;
+    height: 500px;
+}
+
+.main {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.member {
+    margin-top: 10px;
+    width: 100%;
+    height: 300px;
+}
+
+.member_img_1 {
+    height: 100%;
+    width: 40%;
+    float: left;
+    background-image: url(./images/海泽王1.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.member_img_2 {
+    height: 100%;
+    width: 40%;
+    float: left;
+    background-image: url(./images/璀璨星空2.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.member_img_3 {
+    height: 100%;
+    width: 40%;
+    float: left;
+    background-image: url(./images/初音未来7.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.member_text {
+    height: 100%;
+    width: 60%;
+    float: left;
+}
+
+.member_text > p {
+    text-indent: 2em;
+    margin: 0 20px;
+    line-height: 30px;
+}
+
+@media screen and (max-width: 1200px) {
+    .header {
+        width: 100%;
+    }
+    .swiper-container {
+        width: 100%;
+        height: 500px;
+    }
+    .main {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .member {
+       height: 250px; 
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .swiper-container {
+        width: 100%;
+        height: 300px;
+    }
+    .member {
+        height: 220px;
+    }
+}
+
+@media screen and (max-width: 510px) {
+    .member_img_1 {
+        float: none;
+        width: 100%;
+        height: 160px;
+    }
+    .member_img_2 {
+        float: none;
+        width: 100%;
+        height: 160px;
+    }
+    .member_img_3 {
+        float: none;
+        width: 100%;
+        height: 160px;
+    }
+    .member_text {
+        float: none;
+        width: 100%;
+    }
+    .member {
+        height: auto;
+    }
+}
