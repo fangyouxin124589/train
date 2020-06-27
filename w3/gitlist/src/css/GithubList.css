@@ -1,0 +1,39 @@
+.github-list {
+    width: 220px;
+    height: 400px;
+    background-color: #EAEAEA;
+    margin: 8px;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.listNumber {
+    font-size: 25px;
+    padding: 15px 0;
+    margin: 0 auto;
+}
+
+.listAvatar {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.listName {
+    color: rgb(209, 23, 23);
+    font-weight: bold;
+    margin: 10px auto;
+}
+
+@media (max-width: 740px) {
+    .github-item {
+        width: 200px;
+    }
+}
+
+@media (max-width:450px) {
+    .github-item {
+        width: 350px;
+        height: 500px;
+    }
+}
