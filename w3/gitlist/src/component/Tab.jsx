@@ -1,6 +1,7 @@
 import React from "react";
 import axios from "axios";
 import GithubList from "./GithubList";
+import Load from "./Load"
 import "../css/Tab.css";
 
 class Tab extends React.Component {
@@ -136,20 +137,27 @@ class Tab extends React.Component {
           })}
         </div>
         <div className="list-content">
-          {githubData.map((item, index) => {
-            return (
-              <GithubList
-                key={index}
-                listNum={++index}
-                avatar={item.owner.avatar_url}
-                name={item.name}
-                starsCount={item.stargazers_count}
-                forksCount={item.forks_count}
-                openIssuesCount={item.open_issues_count}
-                htmlUrl={item.html_url}
-              />
-            );
-          })}
+        {githubData.length !== 1 ? (
+            githubData.map((item, index) => {
+              return (
+                <GithubList
+                  key={index}
+                  listNum={++index}
+                  avatar={item.owner.avatar_url}
+                  name={item.name}
+                  stargazersCount={item.stargazers_count}
+                  forksCount={item.forks_count}
+                  openIssuesCount={item.open_issues_count}
+                  htmlUrl={item.html_url}
+                />
+              );
+            })
+          ) : (
+            <div>
+              <h3 style={{ textAlign: "center" }}>世界名画~（github热门项目加载中）</h3>
+              <Load />
+            </div>
+          )}
         </div>
       </div>
     );

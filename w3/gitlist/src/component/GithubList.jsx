@@ -8,7 +8,7 @@ import {
   faExclamation,
 } from "@fortawesome/free-solid-svg-icons";
 
-class GithubItem extends React.Component {
+class GithubList extends React.Component {
   constructor(props) {
     super(props);
   }
@@ -79,4 +79,4 @@ class GithubItem extends React.Component {
   }
 }
 
-export default GithubItem;
+export default GithubList;

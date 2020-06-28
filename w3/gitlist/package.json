@@ -2,7 +2,7 @@
   "name": "gitlist",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://fangyouxin124589.github.io/train/w3/gitlist/index.html",
+  "homepage": ".",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.29",
     "@fortawesome/free-solid-svg-icons": "^5.13.1",
@@ -13,6 +13,7 @@
     "axios": "^0.19.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.1"
   },
   "scripts": {
