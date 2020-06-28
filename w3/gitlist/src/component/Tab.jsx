@@ -137,7 +137,7 @@ class Tab extends React.Component {
           })}
         </div>
         <div className="list-content">
-        {githubData.length !== 1 ? (
+        {githubData.length !== 0 ? (
             githubData.map((item, index) => {
               return (
                 <GithubList
