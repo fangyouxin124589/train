@@ -1,7 +1,7 @@
 import React from "react";
 import axios from "axios";
 import GithubList from "./GithubList";
-import Load from "./Load"
+import Load from "./Load";
 import "../css/Tab.css";
 
 class Tab extends React.Component {
@@ -41,7 +41,8 @@ class Tab extends React.Component {
         },
       ],
       tabName: "All",
-      tabUrl: "https://api.github.com/search/repositories?q=stars:%3E11&sort=stars&order=desc&type=Repositories",
+      tabUrl:
+        "https://api.github.com/search/repositories?q=stars:%3E11&sort=stars&order=desc&type=Repositories",
       githubData: [],
       count: 0,
     };
@@ -49,11 +50,13 @@ class Tab extends React.Component {
 
   switchTab = (e, { name, url }) => {
     let { target } = e;
+    // console.log(target);
     const filterOption = target.getAttribute("data-filter");
     if (filterOption) {
-      document
-        .querySelectorAll(".tab-list.active")
-        .forEach((btn) => btn.classList.remove("active"));
+      document.querySelectorAll(".tab-list.active").forEach((btn) => {
+        // console.log(btn);
+        btn.classList.remove("active");
+      });
       target.classList.add("active");
     }
     this.setState({
@@ -117,7 +120,33 @@ class Tab extends React.Component {
   }
 
   render() {
+    let renderInfo;
     const { githubData } = this.state;
+    if (githubData.length !== 0) {
+      renderInfo = githubData.map((item, index) => {
+        return (
+          <GithubList
+            key={index}
+            listNum={++index}
+            avatar={item.owner.avatar_url}
+            name={item.name}
+            stargazersCount={item.stargazers_count}
+            forksCount={item.forks_count}
+            openIssuesCount={item.open_issues_count}
+            htmlUrl={item.html_url}
+          />
+        );
+      });
+    } else {
+      renderInfo = (
+        <div>
+          <h3 style={{ textAlign: "center" }}>
+            世界名画~（github热门项目加载中）
+          </h3>
+          <Load />
+        </div>
+      );
+    }
     return (
       <div>
         <span className="title">Github热门项目</span>
@@ -137,7 +166,7 @@ class Tab extends React.Component {
           })}
         </div>
         <div className="list-content">
-        {githubData.length !== 0 ? (
+          {/* {githubData.length !== 0 ? (
             githubData.map((item, index) => {
               return (
                 <GithubList
@@ -154,10 +183,13 @@ class Tab extends React.Component {
             })
           ) : (
             <div>
-              <h3 style={{ textAlign: "center" }}>世界名画~（github热门项目加载中）</h3>
+              <h3 style={{ textAlign: "center" }}>
+                世界名画~（github热门项目加载中）
+              </h3>
               <Load />
             </div>
-          )}
+          )} */}
+          {renderInfo}
         </div>
       </div>
     );
