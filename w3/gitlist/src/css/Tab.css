@@ -50,6 +50,35 @@ html {
     overflow: hidden;
 }
 
+.add_hide {
+    display: none;
+}
+
+.add_more {
+    display: block;
+    width: 100vw;
+    text-align: center;
+}
+
+.addBtn {
+    margin: 10px auto;
+    width: 100px;
+    padding: 8px;
+    background-color: #428bca;
+    border-color: #357ebd;
+    color: #fff;
+    border-radius: 10px;
+    /* future proofing */
+    -khtml-border-radius: 10px;
+    /* for old Konqueror browsers */
+    text-align: center;
+    vertical-align: middle;
+    border: 1px solid transparent;
+    font-weight: 900;
+    font-size: 13px;
+    cursor: pointer;
+}
+
 @media (max-width: 1220px) {
     .list-content {
         width: 1000px;

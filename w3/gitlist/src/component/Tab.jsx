@@ -7,6 +7,7 @@ import "../css/Tab.css";
 class Tab extends React.Component {
   constructor(props) {
     super(props);
+    this.addMore = this.addMore.bind(this);
     this.state = {
       tabList: [
         {
@@ -45,6 +46,8 @@ class Tab extends React.Component {
         "https://api.github.com/search/repositories?q=stars:%3E11&sort=stars&order=desc&type=Repositories",
       githubData: [],
       count: 0,
+      loading: true,
+      addNumber: 10,
     };
   }
 
@@ -62,6 +65,7 @@ class Tab extends React.Component {
     this.setState({
       tabName: name,
       tabUrl: url,
+      addNumber: 10,
     });
     localStorage.setItem("name", name);
     localStorage.setItem("url", url);
@@ -70,6 +74,15 @@ class Tab extends React.Component {
     }, 200);
   };
 
+  addMore() {
+    const number = this.state.addNumber + 10;
+    // console.log(number)
+    this.setState({
+      addNumber: number,
+    });
+    this.FetchGit();
+  }
+
   //获得数据
   async FetchGit() {
     this.setState({
@@ -77,10 +90,12 @@ class Tab extends React.Component {
     });
     if (this.state.count === 0) {
       const name = localStorage.getItem("name");
+      const { addNumber } = this.state;
       if (name) {
         const res = await axios.get(localStorage.getItem("url"));
         this.setState({
-          githubData: res.data.items.slice(0, 20),
+          githubData: res.data.items.slice(0, addNumber),
+          loading: false,
           count: this.state.count + 1,
           name: localStorage.getItem("name"),
           tabUrl: localStorage.getItem("url"),
@@ -96,8 +111,10 @@ class Tab extends React.Component {
         }
       } else {
         const res = await axios.get(this.state.tabUrl);
+        const { addNumber } = this.state;
         this.setState({
-          githubData: res.data.items.slice(0, 20),
+          githubData: res.data.items.slice(0, addNumber),
+          loading: false,
         });
         const filterOption = document.getElementById("All");
         if (filterOption) {
@@ -109,8 +126,10 @@ class Tab extends React.Component {
       }
     } else {
       const res = await axios.get(this.state.tabUrl);
+      const { addNumber } = this.state;
       this.setState({
-        githubData: res.data.items.slice(0, 20),
+        githubData: res.data.items.slice(0, addNumber),
+        loading: false,
       });
     }
   }
@@ -121,7 +140,8 @@ class Tab extends React.Component {
 
   render() {
     let renderInfo;
-    const { githubData } = this.state;
+    const { githubData, loading } = this.state;
+    const addList = loading ? "add_hide" : "add_more";
     if (githubData.length !== 0) {
       renderInfo = githubData.map((item, index) => {
         return (
@@ -190,6 +210,11 @@ class Tab extends React.Component {
             </div>
           )} */}
           {renderInfo}
+        </div>
+        <div className={addList}>
+          <button type="button" onClick={this.addMore} className="addBtn">
+            加载更多
+          </button>
         </div>
       </div>
     );
