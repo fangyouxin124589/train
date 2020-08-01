@@ -1,117 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="shortcut icon"
-      href="./images/faviconWeb.ico"
-      type="image/x-icon"
-    />
-    <title>女朋友专卖店_首页</title>
-    <link rel="stylesheet" href="./index.css" />
-    <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.css" />
-    <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css" />
-    <script src="https://unpkg.com/swiper/js/swiper.js"></script>
-    <script src="https://unpkg.com/swiper/js/swiper.min.js"></script>
-    <script src="../vue.js"></script>
-  </head>
 
-  <body>
-    <div id="app">
-      <div class="header">
-        <div class="header_left">
-          <span>女朋友专卖店</span>
-        </div>
-        <div class="header_right">
-          <a href="./index.html">首页</a>
-          <a href="./news.html">新闻列表</a>
-          <a href="./about.html">关于我们</a>
-        </div>
-      </div>
-      <div class="swiper-container">
-        <div class="swiper-wrapper">
-          <img src="./images/初音未来1.jpg" class="swiper-slide" alt="" />
-          <img src="./images/初音未来4.jpg" class="swiper-slide" alt="" />
-          <img src="./images/初音未来6.jpg" class="swiper-slide" alt="" />
-        </div>
-        <!-- 分页器 -->
-        <div class="swiper-pagination"></div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="shortcut icon" href="./images/faviconWeb.ico" type="image/x-icon" />
+  <title>女朋友专卖店_首页</title>
+  <link rel="stylesheet" href="./index.css" />
+  <!-- <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.css">
+  <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css">
+  <script src="https://unpkg.com/swiper/js/swiper.js"> </script>
+  <script src="https://unpkg.com/swiper/js/swiper.min.js"> </script> -->
+  <link rel="stylesheet" href="./css/swiper.css">
+  <link rel="stylesheet" href="./css/swiper.min.css">
+  <script src="./js/swiper.js"></script>
+  <script src="./js/swiper.min.js"></script>
+  <script src="../vue.js"></script>
+</head>
 
-        <!-- 导航按钮 -->
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-button-next"></div>
+<body>
+  <div id="app">
+    <div class="header">
+      <div class="header_left">
+        <span>女朋友专卖店</span>
       </div>
-      <div class="main">
-        <h2 style="text-align: center; margin: 15px 0;">团队介绍</h2>
-        <div class="member_team">
-          <div class="member">
-            <div class="member_img_1">
-              <!-- <img src="./images/海泽王1.jpg" alt="" width="500"> -->
-            </div>
-            <div class="member_text">
-              <h4 style="text-align: center; margin-bottom: 10px;">海贼女帝</h4>
-              <p>
-                波雅·汉库克,女儿岛亚马逊·百合王国的皇帝，同时也是”九蛇海贼团的船长，人称：海贼女帝。其绝世的容颜被世人评价为“世界第一美女。也是原王下七武海之一。
-              </p>
-            </div>
-          </div>
-          <div class="member">
-            <div class="member_img_2">
-              <!-- <img src="./images/璀璨星空2.jpg" alt="" width="500"> -->
-            </div>
-            <div class="member_text">
-              <h4 style="text-align: center;">钢琴家</h4>
-              <p>
-                钢琴是乐器之王，作为享誉全球的女朋友专卖店，店里所有出售的女朋友怎么能不会钢琴呢？因此我们女朋友专卖店重金聘请了一位御用钢琴家，她世界上最牛的钢琴家之一，负责教所有的女朋友弹奏钢琴。
-              </p>
-            </div>
-          </div>
-          <div class="member">
-            <div class="member_img_3">
-              <!-- <img src="./images/初音未来7.jpg" alt="" width="500"> -->
-            </div>
-            <div class="member_text">
-              <h4 style="text-align: center;">初音未来</h4>
-              <p>
-                初音未来，是2007年8月31日由CRYPTON FUTURE
-                MEDIA以Yamaha的VOCALOID系列语音合成程序为基础开发的音源库。是世界上第一个使用全息投影技术举办演唱会的虚拟偶像。
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="footer">
-        <p class="footer_p">版权所属 @ 方友鑫</p>
+      <div class="header_right">
+        <a href="./index.html">首页</a>
+        <a href="./news.html">新闻列表</a>
+        <a href="./about.html">关于我们</a>
       </div>
     </div>
+    <div class="swiper-container">
+      <div class="swiper-wrapper">
+        <img src="./images/初音未来1.jpg" class="swiper-slide" alt="" />
+        <img src="./images/初音未来4.jpg" class="swiper-slide" alt="" />
+        <img src="./images/初音未来6.jpg" class="swiper-slide" alt="" />
+      </div>
+      <!-- 分页器 -->
+      <div class="swiper-pagination"></div>
 
-    <script>
-      var mySwiper = new Swiper(".swiper-container", {
-        direction: "horizontal", // 垂直切换选项
-        loop: true, // 循环模式选项
-        speed: 300, //切换速度
-        autoplay: {
-          //自动切换延迟
-          delay: 1500,
-        },
-        // 如果需要分页器
-        pagination: {
-          el: ".swiper-pagination",
-        },
-        // 如果需要前进后退按钮
-        navigation: {
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev",
-        },
-      });
-      mySwiper.params.pagination.clickable = true;
-      //重新初始化pagination
-      mySwiper.pagination.destroy();
-      mySwiper.pagination.init();
-      mySwiper.pagination.bullets
-        .eq(0)
-        .addClass("swiper-pagination-bullet-active");
-    </script>
-  </body>
+      <!-- 导航按钮 -->
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+    </div>
+    <div class="main">
+      <h2 style="text-align: center; margin: 15px 0;">团队介绍</h2>
+      <div class="member_team">
+        <div class="member">
+          <div class="member_img_1">
+            <!-- <img src="./images/海贼王1.jpg" alt="" width="500"> -->
+          </div>
+          <div class="member_text">
+            <h4 style="text-align: center; margin-bottom: 10px;">海贼女帝</h4>
+            <p>
+              波雅·汉库克,女儿岛亚马逊·百合王国的皇帝，同时也是”九蛇海贼团的船长，人称：海贼女帝。其绝世的容颜被世人评价为“世界第一美女。也是原王下七武海之一。
+            </p>
+          </div>
+        </div>
+        <div class="member">
+          <div class="member_img_2">
+            <!-- <img src="./images/璀璨星空2.jpg" alt="" width="500"> -->
+          </div>
+          <div class="member_text">
+            <h4 style="text-align: center;">钢琴家</h4>
+            <p>
+              钢琴是乐器之王，作为享誉全球的女朋友专卖店，店里所有出售的女朋友怎么能不会钢琴呢？因此我们女朋友专卖店重金聘请了一位御用钢琴家，她世界上最牛的钢琴家之一，负责教所有的女朋友弹奏钢琴。
+            </p>
+          </div>
+        </div>
+        <div class="member">
+          <div class="member_img_3">
+            <!-- <img src="./images/初音未来7.jpg" alt="" width="500"> -->
+          </div>
+          <div class="member_text">
+            <h4 style="text-align: center;">初音未来</h4>
+            <p>
+              初音未来，是2007年8月31日由CRYPTON FUTURE
+              MEDIA以Yamaha的VOCALOID系列语音合成程序为基础开发的音源库。是世界上第一个使用全息投影技术举办演唱会的虚拟偶像。
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      <p class="footer_p">版权所属 @ 方友鑫</p>
+    </div>
+  </div>
+
+  <script>
+    var mySwiper = new Swiper(".swiper-container", {
+      direction: "horizontal", // 垂直切换选项
+      loop: true, // 循环模式选项
+      speed: 300, //切换速度
+      autoplay: {
+        //自动切换延迟
+        delay: 1500,
+      },
+      // 如果需要分页器
+      pagination: {
+        el: ".swiper-pagination",
+      },
+      // 如果需要前进后退按钮
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+    });
+    mySwiper.params.pagination.clickable = true;
+    //重新初始化pagination
+    mySwiper.pagination.destroy();
+    mySwiper.pagination.init();
+    mySwiper.pagination.bullets
+      .eq(0)
+      .addClass("swiper-pagination-bullet-active");
+  </script>
+</body>
+
 </html>

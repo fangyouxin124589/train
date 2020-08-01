@@ -45,9 +45,10 @@
                 </div>
                 <div class="arc_date">
                   <span>
-                    {{ new Date(article.updatedAt).getFullYear() + "-" + (new
+                    <!-- {{ new Date(article.updatedAt).getFullYear() + "-" + (new
                     Date(article.updatedAt).getMonth() + 1) + "-" + new
-                    Date(article.updatedAt).getDate() }}
+                    Date(article.updatedAt).getDate() }} -->
+                    {{article.year + "-" + article.month + "-" + article.day}}
                   </span>
                 </div>
               </div>
@@ -68,7 +69,43 @@
         el: "#app",
         data() {
           return {
-            articles: [],
+            articles: [
+              {
+                image:"./images/初音未来1.jpg",
+                year: '2019',
+                month: '3',
+                day: '13',
+                title: '新闻1'
+              },
+              {
+                image:"./images/初音未来4.jpg",
+                year: '2020',
+                month: '9',
+                day: '14',
+                title: '新闻2'
+              },
+              {
+                image:"./images/初音未来6.jpg",
+                year: '2020',
+                month: '5',
+                day: '13',
+                title: '新闻3'
+              },
+              {
+                image:"./images/初音未来7.jpg",
+                year: '2019',
+                month: '7',
+                day: '3',
+                title: '新闻4'
+              },
+              {
+                image:"./images/海贼王1.jpg",
+                year: '2019',
+                month: '4',
+                day: '26',
+                title: '新闻5'
+              }
+            ],
           };
         },
         created() {
